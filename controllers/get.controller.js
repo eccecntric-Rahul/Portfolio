@@ -1,6 +1,7 @@
 import EducationModel from "../model/EducationSchema";
 import ExperienceModel from "../model/ExperienceSchema";
 import PersonalDetailsModel from "../model/PersonalDetailsSchema";
+import ProfileModel from "../model/ProfileSchema";
 import ProjectModel from "../model/ProjectSchema";
 import SkillModel from "../model/SkillModel";
 import TrainingModel from "../model/TrainingSchema";
@@ -66,5 +67,15 @@ export const getServer= async (req,res)=>{
         return res.status(400).send('error occured')
     }
 }
+
+export const getProfile= async (req,res)=>{
+    try{
+        const response = await ProfileModel.find({...req.fields});
+        return res.status(200).send(response);
+    }catch(err){
+        return res.status(400).send('error occured')
+    }
+}
+
 
 export default getEducation;

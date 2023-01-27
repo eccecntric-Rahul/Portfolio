@@ -1,13 +1,13 @@
 import EducationModel from "../model/EducationSchema";
 import ExperienceModel from "../model/ExperienceSchema";
 import PersonalDetailsModel from "../model/PersonalDetailsSchema";
+import ProfileModel from "../model/ProfileSchema";
 import ProjectModel from "../model/ProjectSchema";
 import SkillModel from "../model/SkillModel";
 import TrainingModel from "../model/TrainingSchema";
 
 const postEducation= async (req,res)=>{
     try{
-        console.log(req.fields)
         const response = await EducationModel.create({...req.fields});
         return res.status(200).send(response);
     }catch(err){
@@ -59,4 +59,14 @@ export const postTraining= async (req,res)=>{
         return res.status(400).send('error occured')
     }
 }
+
+export const postProfile= async (req,res)=>{
+    try{
+        const response = await ProfileModel.create({...req.fields});
+        return res.status(200).send(response);
+    }catch(err){
+        return res.status(400).send('error occured')
+    }
+}
+
 export default postEducation;
