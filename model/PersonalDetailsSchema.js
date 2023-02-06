@@ -6,7 +6,6 @@ const detailsSchema= new Schema({
         type: String,
         required: "name is required",
         trim: true,
-        
     },
     designation: {
         type: String,
@@ -32,6 +31,10 @@ const detailsSchema= new Schema({
     website:{
         type:String,
         trim:true,
+    },
+    bannerImage:{
+        type:String,
+        required:true,
     },
     activities:[String]
 });

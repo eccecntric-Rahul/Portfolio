@@ -17,6 +17,23 @@ const skillSchema= new Schema({
        type:String,
        trim:true,
        default:'proficient'
+   },
+   quality:[String],
+   matched:{
+       type:String,
+       trim:true,
+       default:'98'
+   },
+   liked:{
+    type:Boolean,
+    default:false,
+   },
+   orderId:{
+       type:Number,
+       required:true,
+   },
+   bgColor:{
+       type:String,
    }
     
 });
