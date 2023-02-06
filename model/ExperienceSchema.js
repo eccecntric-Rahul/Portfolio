@@ -50,6 +50,9 @@ const experienceSchema= new Schema({
     jobType:{
         type:String,
         default:"Full Time"
+    },
+    goToLink:{
+        type:String,
     }
 });
 

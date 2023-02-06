@@ -8,7 +8,7 @@ const trainingSchema= new Schema({
         trim: true,
         
     },
-    locaion: {
+    location: {
         type: String,
         trim: true,
         required: "location are required",
@@ -54,8 +54,10 @@ const trainingSchema= new Schema({
     jobType:{
         type:String,
         required:true
+    },
+    goToLink:{
+        type:String,
     }
-
     
     
 });
