@@ -12,6 +12,7 @@ const getEducation= async (req,res)=>{
         const response = await EducationModel.find({...req.fields});
         return res.status(200).send(response);
     }catch(err){
+        console.log(err)
         return res.status(400).send('error occured')
     }
 }
@@ -20,6 +21,7 @@ export const getExperience= async (req,res)=>{
         const response = await ExperienceModel.find({...req.fields});
         return res.status(200).send(response);
     }catch(err){
+        console.log(err)
         return res.status(400).send('error occured')
     }
 }
@@ -39,6 +41,7 @@ export const getProject= async (req,res)=>{
         const response = await ProjectModel.find({...req.fields});
         return res.status(200).send(response);
     }catch(err){
+        console.log(err)
         return res.status(400).send('error occured')
     }
 }
@@ -48,6 +51,7 @@ export const getSkill= async (req,res)=>{
         const response = await SkillModel.find({...req.fields});
         return res.status(200).send(response);
     }catch(err){
+        console.log(err)
         return res.status(400).send('error occured')
     }
 }
@@ -57,6 +61,7 @@ export const getTraining= async (req,res)=>{
         const response = await TrainingModel.find({...req.fields});
         return res.status(200).send(response);
     }catch(err){
+        console.log(err)
         return res.status(400).send('error occured')
     }
 }
@@ -74,6 +79,7 @@ export const getProfile= async (req,res)=>{
         const response = await ProfileModel.find({...req.fields});
         return res.status(200).send(response);
     }catch(err){
+        console.log(err)
         return res.status(400).send('error occured')
     }
 }
@@ -83,6 +89,7 @@ export const getReview= async (req,res)=>{
         const response = await ReviewSchema.find({...req.fields});
         return res.status(200).send(response);
     }catch(err){
+        console.log(err)
         return res.status(400).send('error occured')
     }
 }

@@ -12,6 +12,7 @@ const postEducation= async (req,res)=>{
         const response = await EducationModel.create({...req.fields});
         return res.status(200).send(response);
     }catch(err){
+        console.log(err)
         return res.status(400).send('error occured')
     }
 }
@@ -20,6 +21,7 @@ export const postExperience= async (req,res)=>{
         const response = await ExperienceModel.create({...req.fields});
         return res.status(200).send(response);
     }catch(err){
+        console.log(err)
         return res.status(400).send('error occured')
     }
 }
@@ -39,6 +41,7 @@ export const postProject= async (req,res)=>{
         const response = await ProjectModel.create({...req.fields});
         return res.status(200).send(response);
     }catch(err){
+        console.log(err)
         return res.status(400).send('error occured')
     }
 }
@@ -48,6 +51,7 @@ export const postSkill= async (req,res)=>{
         const response = await SkillModel.create({...req.fields});
         return res.status(200).send(response);
     }catch(err){
+        console.log(err)
         return res.status(400).send('error occured')
     }
 }
@@ -57,6 +61,7 @@ export const postTraining= async (req,res)=>{
         const response = await TrainingModel.create({...req.fields});
         return res.status(200).send(response);
     }catch(err){
+        console.log(err)
         return res.status(400).send('error occured')
     }
 }
@@ -66,6 +71,7 @@ export const postProfile= async (req,res)=>{
         const response = await ProfileModel.create({...req.fields});
         return res.status(200).send(response);
     }catch(err){
+        console.log(err)
         return res.status(400).send('error occured')
     }
 }
@@ -75,6 +81,7 @@ export const postReview= async (req,res)=>{
         const response = await ReviewSchema.create({...req.fields});
         return res.status(200).send(response);
     }catch(err){
+        console.log(err)
         return res.status(400).send('error occured')
     }
 }
