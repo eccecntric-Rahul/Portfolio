@@ -23,4 +23,4 @@ const educationSchema= new Schema({
 });
 
 
-export default mongoose.model("employee",educationSchema);
+export default mongoose.model("education",educationSchema);

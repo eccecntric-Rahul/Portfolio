@@ -32,14 +32,11 @@ const detailsSchema= new Schema({
         type:String,
         trim:true,
     },
-    bannerImage:{
-        type:String,
-        required:true,
-    },
+    bannerImage:[String],
     profilePicture:{
         type:String,
     },
-    
+
     activities:[String]
 });
 
