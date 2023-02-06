@@ -17,7 +17,7 @@ const experienceSchema= new Schema({
         type: String,
         trim: true,
     },
-    locaion: {
+    location: {
         type: String,
         trim: true,
         required: "location are required",
