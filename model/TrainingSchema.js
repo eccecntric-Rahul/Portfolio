@@ -27,6 +27,9 @@ const trainingSchema= new Schema({
         type:String,
         trim:true,
     },
+    From:{
+        type:String,
+    },
     matched:{
         type:String,
         trim:true,

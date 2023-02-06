@@ -34,7 +34,10 @@ const skillSchema= new Schema({
    },
    bgColor:{
        type:String,
-   }
+   },
+   goToLink:{
+    type:String
+   },
     
 });
 
