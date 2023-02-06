@@ -36,6 +36,10 @@ const detailsSchema= new Schema({
         type:String,
         required:true,
     },
+    profilePicture:{
+        type:String,
+    },
+    
     activities:[String]
 });
 
