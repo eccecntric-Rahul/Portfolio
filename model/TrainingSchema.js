@@ -8,6 +8,16 @@ const trainingSchema= new Schema({
         trim: true,
         
     },
+    locaion: {
+        type: String,
+        trim: true,
+        required: "location are required",
+    },
+    duration:{
+        type: String,
+        trim: true,
+        required: "duration are required",
+    },
     description: {
         type: String,
         trim: true,
