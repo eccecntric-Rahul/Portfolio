@@ -27,8 +27,30 @@ const experienceSchema= new Schema({
         trim: true,
         required: "duration are required",
     },
-
-    
+    matched:{
+        type:String,
+        trim:true,
+        default:'98'
+    },
+    liked:{
+     type:Boolean,
+     default:false,
+    },
+    orderId:{
+        type:Number,
+        required:true,
+    },
+    bgColor:{
+        type:String,
+    },
+    image:{
+        type:String,
+        required:true
+    },
+    jobType:{
+        type:String,
+        default:"Full Time"
+    }
 });
 
 
