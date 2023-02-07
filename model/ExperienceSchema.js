@@ -6,7 +6,6 @@ const experienceSchema= new Schema({
         type: String,
         required: "name is required",
         trim: true,
-        
     },
     designation:{
         type:String,

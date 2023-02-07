@@ -21,13 +21,10 @@ const trainingSchema= new Schema({
     description: {
         type: String,
         trim: true,
-        required:'training is required',
+        required:'description is required',
     },
-    image:{
-        type:String,
-        trim:true,
-    },
-    From:{
+    
+    doneFrom:{
         type:String,
     },
     matched:{
@@ -53,10 +50,6 @@ const trainingSchema= new Schema({
     training:{
         type:Boolean,
         default:true,
-    },
-    jobType:{
-        type:String,
-        required:true
     },
     goToLink:{
         type:String,
