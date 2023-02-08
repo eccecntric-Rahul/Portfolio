@@ -1,5 +1,5 @@
 import express from "express";
-import getEducation, { getExperience, getPersonalDetails, getProfile, getProject, getReview, getSkill, getTraining } from "../controllers/get.controller";
+import getEducation, { getExperience, getPersonalDetails, getPhotos, getProfile, getProject, getReview, getSkill, getTraining } from "../controllers/get.controller";
 const router =express.Router();
 
 router.get("/education",getEducation);
@@ -10,5 +10,6 @@ router.get("/training",getTraining);
 router.get("/project",getProject);
 router.get("/profile",getProfile);
 router.get("/review",getReview);
+router.get("/photos",getPhotos);
 
 module.exports= router;

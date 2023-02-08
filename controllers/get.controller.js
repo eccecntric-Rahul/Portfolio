@@ -1,6 +1,7 @@
 import EducationModel from "../model/EducationSchema";
 import ExperienceModel from "../model/ExperienceSchema";
 import PersonalDetailsModel from "../model/PersonalDetailsSchema";
+import PhotosSchema from "../model/PhotosSchema";
 import ProfileModel from "../model/ProfileSchema";
 import ProjectModel from "../model/ProjectSchema";
 import ReviewSchema from "../model/ReviewSchema";
@@ -87,6 +88,15 @@ export const getProfile= async (req,res)=>{
 export const getReview= async (req,res)=>{
     try{
         const response = await ReviewSchema.find({...req.fields});
+        return res.status(200).send(response);
+    }catch(err){
+        console.log(err)
+        return res.status(400).send('error occured')
+    }
+}
+export const getPhotos= async (req,res)=>{
+    try{
+        const response = await PhotosSchema .find({...req.fields});
         return res.status(200).send(response);
     }catch(err){
         console.log(err)
