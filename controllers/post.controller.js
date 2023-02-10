@@ -83,20 +83,18 @@ export const postReview= async (req,res)=>{
         const response = await ReviewSchema.create({...req.fields});
         const testAccount = await nodemailer.createTestAccount();
         let transporter = nodemailer.createTransport({
-            host: "smtp.ethereal.email",
-            port: 587,
-            secure: false, // true for 465, false for other ports
-            auth: {
-              user: testAccount.user, // generated ethereal user
-              pass: testAccount.pass, // generated ethereal password
-            },
+            service: 'gmail',
+        auth: {
+          user: 'eccentricrahul1998@gmail.com',
+          pass: 'AbCd1234$$'
+        }
           });
           const text = `Name - ${req.fields.guestName}
           Review - ${req.fields.comment}
           Liked - ${req.fields.like==true?"Yes":"No"}`
           // send mail with defined transport object
           let info = await transporter.sendMail({
-            from: '"TechRahul" <techrahul.com>', // sender address
+            from: '"TechRahul" <eccentricrahul1998@gmail.com>', // sender address
             to: "rk2655415@gmail.com ,mokshitakhurana1998@gmail.com", // list of receivers
             subject: "New Review Posted on TechRahul!", // Subject line
             text: text, // plain text body
