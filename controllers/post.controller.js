@@ -85,8 +85,8 @@ export const postReview= async (req,res)=>{
         let transporter = nodemailer.createTransport({
             service: 'gmail',
         auth: {
-          user: 'eccentricrahul1998@gmail.com',
-          pass: 'AbCd1234$$'
+          user: process.env.EMAIL,
+          pass: process.env.APP_PASSWORD
         }
           });
           const text = `Name - ${req.fields.guestName}
@@ -98,7 +98,6 @@ export const postReview= async (req,res)=>{
             to: "rk2655415@gmail.com ,mokshitakhurana1998@gmail.com", // list of receivers
             subject: "New Review Posted on TechRahul!", // Subject line
             text: text, // plain text body
-            html: "<b></b>", // html body
           });
         
           console.log("Message sent: %s", info.messageId);
