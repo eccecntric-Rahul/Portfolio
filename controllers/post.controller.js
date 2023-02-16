@@ -15,7 +15,7 @@ const postEducation= async (req,res)=>{
         return res.status(200).send(response);
     }catch(err){
         console.log(err)
-        return res.status(400).send('error occured')
+        return res.status(400).send({message:err.message});
     }
 }
 export const postExperience= async (req,res)=>{
@@ -24,7 +24,7 @@ export const postExperience= async (req,res)=>{
         return res.status(200).send(response);
     }catch(err){
         console.log(err)
-        return res.status(400).send('error occured')
+        return res.status(400).send({message:err.message});
     }
 }
 
@@ -34,7 +34,7 @@ export const postPersonalDetails= async (req,res)=>{
         return res.status(200).send(response);
     }catch(err){
         console.log(err)
-        return res.status(400).send('error occured')
+        return res.status(400).send({message:err.message});
     }
 }
 
@@ -44,7 +44,7 @@ export const postProject= async (req,res)=>{
         return res.status(200).send(response);
     }catch(err){
         console.log(err)
-        return res.status(400).send('error occured')
+        return res.status(400).send({message:err.message});
     }
 }
 
@@ -54,7 +54,7 @@ export const postSkill= async (req,res)=>{
         return res.status(200).send(response);
     }catch(err){
         console.log(err)
-        return res.status(400).send('error occured')
+        return res.status(400).send({message:err.message});
     }
 }
 
@@ -64,7 +64,7 @@ export const postTraining= async (req,res)=>{
         return res.status(200).send(response);
     }catch(err){
         console.log(err)
-        return res.status(400).send('error occured')
+        return res.status(400).send({message:err.message});
     }
 }
 
@@ -74,14 +74,13 @@ export const postProfile= async (req,res)=>{
         return res.status(200).send(response);
     }catch(err){
         console.log(err)
-        return res.status(400).send('error occured')
+        return res.status(400).send({message:err.message});
     }
 }
 
 export const postReview= async (req,res)=>{
     try{
         const response = await ReviewSchema.create({...req.fields});
-        const testAccount = await nodemailer.createTestAccount();
         let transporter = nodemailer.createTransport({
             service: 'gmail',
         auth: {
@@ -89,27 +88,22 @@ export const postReview= async (req,res)=>{
           pass: process.env.APP_PASSWORD
         }
           });
-          const text = `Name - ${req.fields.guestName}
+          const text = `
+          Name - ${req.fields.guestName}
           Review - ${req.fields.comment}
-          Liked - ${req.fields.like==true?"Yes":"No"}`
-          // send mail with defined transport object
+          Liked - ${req.fields.like}`
           let info = await transporter.sendMail({
-            from: '"TechRahul" <eccentricrahul1998@gmail.com>', // sender address
-            to: "rk2655415@gmail.com ,mokshitakhurana1998@gmail.com", // list of receivers
+            from: `"TechRahul" <${process.env.EMAIL}>`, // sender address
+            to: `${process.env.RECIEVER_EMAIL1},${process.env.RECIEVER_EMAIL2}`, // list of receivers
             subject: "New Review Posted on TechRahul!", // Subject line
-            text: text, // plain text body
+            text: text, 
           });
-        
           console.log("Message sent: %s", info.messageId);
-          // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
-        
-          // Preview only available when sending through an Ethereal account
           console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
-          // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
         return res.status(200).send(response);
     }catch(err){
-        console.log(err)
-        return res.status(400).send('error occured')
+        console.log(err.message)
+        return res.status(400).send({message:err.message});
     }
 }
 
@@ -119,7 +113,7 @@ export const postPhotos= async (req,res)=>{
         return res.status(200).send(response);
     }catch(err){
         console.log(err)
-        return res.status(400).send('error occured')
+        return res.status(400).send({message:err.message});
     }
 }
 

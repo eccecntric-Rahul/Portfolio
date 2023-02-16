@@ -14,7 +14,7 @@ const getEducation= async (req,res)=>{
         return res.status(200).send(response);
     }catch(err){
         console.log(err)
-        return res.status(400).send('error occured')
+        return res.status(400).send({message:err.message});
     }
 }
 export const getExperience= async (req,res)=>{
@@ -23,7 +23,7 @@ export const getExperience= async (req,res)=>{
         return res.status(200).send(response);
     }catch(err){
         console.log(err)
-        return res.status(400).send('error occured')
+        return res.status(400).send({message:err.message});
     }
 }
 
@@ -33,7 +33,7 @@ export const getPersonalDetails= async (req,res)=>{
         return res.status(200).send(response);
     }catch(err){
         console.log(err)
-        return res.status(400).send('error occured')
+        return res.status(400).send({message:err.message});
     }
 }
 
@@ -43,7 +43,7 @@ export const getProject= async (req,res)=>{
         return res.status(200).send(response);
     }catch(err){
         console.log(err)
-        return res.status(400).send('error occured')
+        return res.status(400).send({message:err.message});
     }
 }
 
@@ -53,7 +53,7 @@ export const getSkill= async (req,res)=>{
         return res.status(200).send(response);
     }catch(err){
         console.log(err)
-        return res.status(400).send('error occured')
+        return res.status(400).send({message:err.message});
     }
 }
 
@@ -63,7 +63,7 @@ export const getTraining= async (req,res)=>{
         return res.status(200).send(response);
     }catch(err){
         console.log(err)
-        return res.status(400).send('error occured')
+        return res.status(400).send({message:err.message});
     }
 }
 
@@ -71,7 +71,7 @@ export const getServer= async (req,res)=>{
     try{
         return res.status(200).send("Server is running !!");
     }catch(err){
-        return res.status(400).send('error occured')
+        return res.status(400).send({message:err.message});
     }
 }
 
@@ -81,7 +81,7 @@ export const getProfile= async (req,res)=>{
         return res.status(200).send(response);
     }catch(err){
         console.log(err)
-        return res.status(400).send('error occured')
+        return res.status(400).send({message:err.message});
     }
 }
 
@@ -91,7 +91,7 @@ export const getReview= async (req,res)=>{
         return res.status(200).send(response);
     }catch(err){
         console.log(err)
-        return res.status(400).send('error occured')
+        return res.status(400).send({message:err.message});
     }
 }
 export const getPhotos= async (req,res)=>{
@@ -100,7 +100,7 @@ export const getPhotos= async (req,res)=>{
         return res.status(200).send(response);
     }catch(err){
         console.log(err)
-        return res.status(400).send('error occured')
+        return res.status(400).send({message:err.message});
     }
 }
 

@@ -6,7 +6,6 @@ const reviewSchema= new Schema({
         type: String,
         required: "name is required",
         trim: true,
-        
     },
     comment: {
         type: String,
@@ -15,8 +14,8 @@ const reviewSchema= new Schema({
     email:{
         type:String,
         trim:true,
-        lowercase: true,
-        unique:'This email already exists',
+        unique:true,
+        required: true,
     },
     like:{
         type:Boolean,
